@@ -12,7 +12,13 @@ var mongoose = require('mongoose'),
 
 
 
-var ItemSchema = new Schema({
+
+var ListSchema = new Schema({
+	caption: {
+		type: String,
+		required: 'Caption can not be blank',
+		trim: true
+	},
 	_type: {
 		type: String,
 		enum : ['text', 'video', 'picture'],
@@ -42,20 +48,7 @@ var ItemSchema = new Schema({
 		trim: true
 
 	},
-	itemMaker: {
-		type: Schema.ObjectId,
-		ref: 'User'
-	}
 
-
-});
-
-var ListSchema = new Schema({
-	caption: {
-		type: String,
-		required: 'Caption can not be blank',
-		trim: true
-	},
 	created: {
 		type: Date,
 		default: Date.now
@@ -66,12 +59,6 @@ var ListSchema = new Schema({
 		ref: 'User'
 	},
 
-	item: [ItemSchema]
-
 });
-
-
-
-
 
 mongoose.model('List', ListSchema);

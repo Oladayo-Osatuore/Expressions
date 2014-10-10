@@ -14,9 +14,9 @@ var mongoose = require('mongoose'),
 exports.create = function(req, res) {
 	var list = new List(req.body);
 	list.user = req.user;
-	console.log('dubugging');
-	console.log(list);
-	console.log('done');
+	// console.log('dubugging');
+	// console.log(list);
+	// console.log('done');
 
 
 	list.save(function(err) {
@@ -42,9 +42,9 @@ exports.read = function(req, res) {
  * Update a List
  */
 exports.update = function(req, res) {
-	var list = req.list ;
+	var list = req.list;
 
-	list = _.extend(list , req.body);
+	list = _.extend(list, req.body);
 
 	list.save(function(err) {
 		if (err) {

@@ -6,9 +6,43 @@
         <form class="form-horizontal" data-ng-submit="update()" novalidate>
             <fieldset>
                 <div class="form-group">
-                    <label class="control-label" for="name">Name</label>
+                    <label class="control-label" for="name">Caption</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="list.name" id="name" class="form-control" placeholder="Name" required>
+                        <input type="text" data-ng-model="list.caption" id="name" class="form-control" placeholder="Caption" required>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="control-label" for="name">Category</label>
+                    <div class="controls">
+                        <select type="text" data-ng-model="category" id="name" class="form-control" placeholder="Category" required>
+                            <option value="text">Text</option>
+                            <option value="video">Video</option>
+                            <option value="picture">Picture</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="title">Title</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="list.title" id="name" class="form-control" placeholder="title" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="image">Image</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="list.image" id="name" class="form-control" placeholder="image" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="title">Video</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="list.video" id="name" class="form-control" placeholder="video" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="description">Description</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="list.description" id="name" class="form-control" placeholder="description" required>
                     </div>
                 </div>
                 <div class="form-group">

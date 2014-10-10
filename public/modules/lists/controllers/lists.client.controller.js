@@ -7,19 +7,15 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
 		// Create new List
 		$scope.create = function() {
-			// Create new List object
+			//Create new List object
 			var list = new Lists ({
 				caption: this.caption,
-				// console.log('doing debugging');
-				// console.log(list);
-				// console.log('done');
-				// category: this.category,
+				_type: this._type,
 				title: this.title,
-				// image_url: this.image,
-				// video_url: this.video,
-				description: this.description;
+				image_url: this.image_url,
+				video_url: this.video_url,
+				description: this.description,
 			});
-		};
 
 			// Redirect after save
 			list.$save(function(response) {
@@ -27,18 +23,15 @@ angular.module('lists').controller('ListsController', ['$scope', '$stateParams',
 
 				// Clear form fields
 				// $scope.caption = '';
-				$scope.category = '';
-				$scope.title = '';
-				$scope.image_url = '';
-				$scope.video_url = '';
-				$scope.description = '';
+				$scope.caption = '';
+				// $scope.item = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
 		};
 
 		// Remove existing List
-		$scope.remove = function( list ) ;
+		$scope.remove = function( list ) {
 			if ( list ) { list.$remove();
 
 				for (var i in $scope.lists ) {
