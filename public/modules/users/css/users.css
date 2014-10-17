@@ -14,3 +14,59 @@
 	right: 10px;
 	position: absolute;
 }
+
+
+#signIn {
+	padding: 120px 0 7px 0;
+}
+
+
+.signin {
+	padding-top: 2px;
+}
+
+#userName {
+	padding:0 0 2px 0;
+}
+
+
+.signInPage {
+	background: url(/modules/users/img/buttons/signinbackground.jpg) no-repeat;
+	height: 600px;
+}
+
+
+#signupLabel {
+	color: white;
+}
+
+.containerfooter {
+	padding: 241px 0 0 0;
+}
+
+#signIn {
+	color: white;
+}
+
+
+#signuptoexpresions{
+	padding-top: 120px;
+	color: white;
+}
+
+.signUpPage {
+	background: url(/modules/users/img/buttons/signupbackground.jpg) no-repeat;
+	height: 600px;
+}
+
+.containerrfooter {
+	padding: 19px 0 0 0;
+}
+
+#orsignup {
+	color: white;
+}
+
+#or{
+	color:white;
+}

@@ -1,0 +1,41 @@
+/********************************
+LIST LISTS STYLING
+********************************/
+
+.listsImage {
+	background: url(../expressions4.jpg) no-repeat;
+}
+
+
+#listHeader {
+	color: white;
+}
+
+#itemtype {
+	/*background-color: green;
+	border: 2px solid black ;*/
+	padding: 5px 0 0 0;
+}
+
+.itemDiv {
+	padding: 125px 0 0 0;
+}
+
+#itemTitle, #itemsDescription {
+	font-size: 1.5em;
+}
+ 
+
+ .sp{
+ 	margin-bottom: 50px;
+border-bottom: 1px solid black;
+padding-bottom: 11px;
+ }
+
+
+ /*********************************
+	EDIT LIST STYLING
+ *********************************/
+ .editList{
+ 	padding: 63px 0 0 0;
+ }

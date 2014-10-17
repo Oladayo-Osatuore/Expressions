@@ -1,57 +1,42 @@
 <section data-ng-controller="ListsController" data-ng-init="findOne()">
-    <div class="page-header">
-        <h1>Edit List</h1>
-    </div>
-    <div class="col-md-12">
-        <form class="form-horizontal" data-ng-submit="update()" novalidate>
-            <fieldset>
-                <div class="form-group">
-                    <label class="control-label" for="name">Caption</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="list.caption" id="name" class="form-control" placeholder="Caption" required>
+    <div class="row">
+         <div class="text-center col-md-offset-4 col-md-4">
+            <div class="page-header">
+                <br><br>
+                <h1 id="editList">Edit List</h1>
+            </div>
+            <div class="col-md-12">
+                <form class="form-horizontal" data-ng-submit="update()" novalidate>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="control-label" for="name">Caption</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="list.caption" id="name" class="form-control" placeholder="caption" required><br>
+                                <input type="text" data-ng-model="list.description" id="name" class="form-control" placeholder="Description" required>
+                            </div>
+                        </div> 
+                                <p>
+                                    <input type='button' ng-click='addText()' value='Add Text' class='btn btn-ok'/> <input type='button' ng-click='addPicture()' class='btn btn-info' value='Add Image'/> <input type='button' ng-click='addVideo()' value='Add Video' class='btn btn-warning'/>
+                                </p>
+                                <div data-ng-repeat="item in list.items">
+                                    <p>{{item.itemType | uppercase}}</p>
+                                    <p><input type='text' data-ng-model='item.itemTitle' placeholder='Item Title'></p>
+                                    <p><input type='text' data-ng-model='item.itemDescription' placeholder='Item Description'></p>
+                                    <p><input type='picture' data-ng-model='item.itemImageUrl' placeholder='Image Link' data-ng-if="item.itemType ==='picture'"></p>
+                                    <p><input type='video' data-ng-model='item.itemVideoUrl' data-ng-if="item.itemType==='video'"placeholder='Video Link'/></p>
+                                    <input type='button' ng-click='removeItem($index)' value='Delete Item' class='btn btn-ok'/>
+                                </div><br>
+                                 <div>  
+                        <div class="">
+                            <input type="submit"  value='Update' class="btn btn-default">
+                        </div><br>
+                        <div data-ng-show="error" class="text-danger">
+                            <strong data-ng-bind="error"></strong>
+                        </div>
                     </div>
-                </div>
-                 <div class="form-group">
-                    <label class="control-label" for="name">Category</label>
-                    <div class="controls">
-                        <select type="text" data-ng-model="category" id="name" class="form-control" placeholder="Category" required>
-                            <option value="text">Text</option>
-                            <option value="video">Video</option>
-                            <option value="picture">Picture</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="title">Title</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="list.title" id="name" class="form-control" placeholder="title" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="image">Image</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="list.image" id="name" class="form-control" placeholder="image" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="title">Video</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="list.video" id="name" class="form-control" placeholder="video" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="description">Description</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="list.description" id="name" class="form-control" placeholder="description" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Update" class="btn btn-default">
-                </div>
-				<div data-ng-show="error" class="text-danger">
-					<strong data-ng-bind="error"></strong>
-				</div>
-            </fieldset>
-        </form>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
     </div>
 </section>

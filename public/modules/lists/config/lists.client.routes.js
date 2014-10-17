@@ -20,6 +20,11 @@ angular.module('lists').config(['$stateProvider',
 		state('editList', {
 			url: '/lists/:listId/edit',
 			templateUrl: 'modules/lists/views/edit-list.client.view.html'
+		}).
+		state('createItem', {
+			url: 'lists/:listId/addItem',
+			templateUrl: 'modules/lists/views/create-item.client.view.html'
 		});
 	}
 ]);
+

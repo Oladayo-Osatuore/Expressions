@@ -13,6 +13,7 @@ var mongoose = require('mongoose'),
  */
 exports.create = function(req, res) {
 	var list = new List(req.body);
+	console.log(list);
 	list.user = req.user;
 	// console.log('dubugging');
 	// console.log(list);
@@ -91,7 +92,8 @@ exports.list = function(req, res) {
 /**
  * List middleware
  */
-exports.listByID = function(req, res, next, id) { List.findById(id).populate('user', 'displayName').exec(function(err, list) {
+exports.listByID = function(req, res, next, id) { 
+	List.findById(id).populate('user', 'displayName').exec(function(err, list) {
 		if (err) return next(err);
 		if (! list) return next(new Error('Failed to load List ' + id));
 		req.list = list ;

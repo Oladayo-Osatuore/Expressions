@@ -11,3 +11,14 @@ angular.module('lists').factory('Lists', ['$resource',
 		});
 	}
 ]);
+
+angular.module('lists').factory('Items', ['$resource',
+	function($resource) {
+		return $resource('/lists/:listId/items/:itemId', { listId:'@list', itemId: '@_id'
+		}, {
+			update: {
+				method: 'PUT'
+			}
+		});
+	}
+]);

@@ -1,0 +1,76 @@
+  <div class="form-group">
+                            <label class="control-label" for="name"></label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="description" id="name" class="form-control" placeholder="Caption description" required>
+                            </div>
+                        </div>
+                <div><button type="button" ng-click="showTextFieldSet()">Text</button>
+                    <div ng-show="textState">
+                        <div class="form-group">
+                        <label ng-show="title" class="control-label" for="name">Title</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="item.itemTextTitle" id="name" class="form-control" placeholder="Title" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="name"></label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="item.itemTextDescription" id="name" class="form-control" placeholder="Item description" required>
+                            </div>
+                        </div>
+                    </div>
+                <div><button type="button" ng-click="showPictureFieldSet()">Picture</button>
+                <div>
+                    <div class="form-group" ng-show="pictureState">
+                            <label class="control-label" for="name"></label>
+                                <div class="controls">
+                                    <input type="text" data-ng-model="picture.title" id="name" class="form-control" placeholder="Title" required>
+                                </div>
+                    <div class="form-group">
+                        <label class="control-label" for="name"></label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="picture.image_url" id="name" class="form-control" placeholder="Image Link" required>
+                            </div>
+                    </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="name"></label>
+                                <div class="controls">
+                                    <input type="text" data-ng-model="picture.description" id="name" class="form-control" placeholder="Item description" required>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div><button  type="button" ng-click="showVideoFieldSet()">Video</button>
+                <div ng-show="videoState">
+                    <div class="form-group">
+                        <label ng-show="title" class="control-label" for="name"></label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="video.title" id="name" class="form-control" placeholder="Title" required>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="name"></label>
+                        <div class="controls">
+                            <input type="text" data-ng-model="video.video_url" id="name" class="form-control" placeholder="Video Link" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="name"></label>
+                        <div class="controls">
+                                <input type="text" data-ng-model="video.description" id="name" class="form-control" placeholder="Item description" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div>  
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default">
+                </div>
+                <div data-ng-show="error" class="text-danger">
+                    <strong data-ng-bind="error"></strong>
+                </div>
+            </div>

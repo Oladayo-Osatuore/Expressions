@@ -8,50 +8,33 @@
                 <div class="form-group">
                     <label class="control-label" for="name">Caption</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="caption" id="name" class="form-control" placeholder="caption" required>
+                        <input type="text" data-ng-model="caption" id="name" class="form-control" placeholder="caption" required><br>
+                        <input type="text" data-ng-model="description" id="name" class="form-control" placeholder="description" required>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="name">Category</label>
-                    <div class="controls">
-                        <select type="text" data-ng-model="_type" id="name" class="form-control" placeholder="_type" required>
-                            <option value="text">Text</option>
-                            <option value="video">Video</option>
-                            <option value="picture">Picture</option>
-                        </select>
+                </div> 
+                        <p>
+                            <input type='button' ng-click='addText()' value='Add Text' class='btn btn-ok'/> <input type='button' ng-click='addPicture()' class='btn btn-info' value='Add Image'/> <input type='button' ng-click='addVideo()' value='Add Video' class='btn btn-warning'/>
+                        </p>
+                        <div data-ng-repeat="item in list.items">
+                            <div><p>{{item.itemType}}</p>
+                            <div><p><input type='text' data-ng-model='item.itemTitle' placeholder='Item Title'></p></div>
+                            <div><p><input type='text' data-ng-model='item.itemDescription' placeholder='Item Description'></p></div>
+                            <div><p><input type='picture' data-ng-model='item.itemImageUrl' placeholder='Image Link' data-ng-if="item.itemType ==='picture'"></p></div>
+                            <div><p><input type='video' data-ng-model='item.itemVideoUrl' data-ng-if="item.itemType==='video'"placeholder='Video Link'/></p></div><br>
+                             <input type='button' ng-click='removeItem($index)' value='Delete Item' class='btn btn-ok'/>
+                         </div>
+                        </div><br>
+                <div>  
+                    <div class="">
+                        <input type="submit" class="btn btn-default">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="name">Title</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="title" id="name" class="form-control" placeholder="Title" required>
+                    <div data-ng-show="error" class="text-danger">
+                        <strong data-ng-bind="error"></strong>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="name">Image</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="image" id="name" class="form-control" placeholder="Image Link" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="name">Video</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="video" id="name" class="form-control" placeholder="Video Link" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="name">Description</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="description" id="name" class="form-control" placeholder="Description" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-default">
-                </div>
-				<div data-ng-show="error" class="text-danger">
-					<strong data-ng-bind="error"></strong>
-				</div>
+            </div>
             </fieldset>
         </form>
     </div>
 </section>
+Status API Training Shop Blog About
+© 2014 GitHub, Inc. Terms Privacy Security Contact
