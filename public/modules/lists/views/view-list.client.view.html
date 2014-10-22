@@ -1,25 +1,24 @@
-<section data-ng-controller="ListsController" data-ng-init="findOne()">
+<section class="viewLIst" data-ng-controller="ListsController" data-ng-init="findOne()">
     <div class="row">
-        <div class="text-center col-md-offset-2 col-md-8">
-            <h4 data-ng-bind="list.caption"></h4>
-        </div>
-            <div ng-repeat='item in list.items'>
-                <div class="">
-                <div class="itemDiv">
-                    <div  id="itemTitle" class="text-center col-md-offset-2 col-md-8">Item Title:<h4 data-ng-bind="item.itemTitle"></h4></div><br><br>       
-                    <div  class="text-center col-md-offset-2 col-md-8"><img data-ng-src="{{item.itemImageUrl}}" ng-if="item.itemType==='picture'"height='350' width='600'/></div>
-                    <div  class="text-center col-md-offset-2 col-md-8"><iframe ng-if="item.itemType==='video'" data-ng-src="{{scePermit(item.itemVideoUrl)}}" height='350' width='600'></iframe></div>
-                    <div id="itemsDescription" class="text-center col-md-offset-2 col-md-8">Item Description:<h4 data-ng-bind="item.itemDescription"></h4></div>
-                </div>
+        <div>
+            <div class="text-center" class="myCaption">
+                <h4 class="captionName" data-ng-bind="list.caption"></h4>
+            </div>
+            <div class="list-item" ng-repeat='item in list.items'>
+                 <div  id="itemTitle" class="text-center col-md-offset-2 col-md-8"><h4 data-ng-bind="item.itemTitle"></h4></div><br><br>  
+                <div  class="text-center"><img data-ng-src="{{item.itemImageUrl}}" ng-if="item.itemType === 'picture'"height='350' width='600'/></div>
+                <div  class="text-center"><iframe ng-if="item.itemType==='video'" data-ng-src="{{scePermit(item.itemVideoUrl)}}" height='350' width='600'></iframe></div>
+                <div id="itemsDescription" class="text-center"><h4 data-ng-bind="item.itemDescription"></h4></div>
                 <small  class="text-center col-md-offset-2 col-md-8">
-                    <em class="text-muted">
+                    <em class="text-muted" >
                         Posted on
                         <span data-ng-bind="list.created | date:'mediumDate'"></span>
                         by
                         <span data-ng-bind="list.user.displayName"></span>
                     </em>
                 </small>
-                <div  class="text-center col-md-offset-2 sp col-md-8"class="pull-right" data-ng-show="authentication.user._id == list.user._id">
+                <br/>
+                <div  class="text-center" data-ng-show="authentication.user._id == list.user._id">
                         
                         <a class="btn btn-primary" href="/#!/lists/{{list._id}}/edit">
                             <i class="glyphicon glyphicon-edit"></i>
@@ -27,9 +26,16 @@
                         <a class="btn btn-primary" data-ng-click="remove();">
                             <i class="glyphicon glyphicon-trash"></i>
                         </a>
-                    </div>
                 </div>
+            </div>
+
             </div>
         </div>
     </div>
-</section
+        
+</section>
+<div id="footer">
+  <div class="containerrFooter">
+    <p class="text-muted credit text-center">Expressions &copy 2014.All rights reserved.<a href="http://osatuore.omorodion@andela.co">   Omorodion Osatuore</a>.</p>
+  </div>
+</div>

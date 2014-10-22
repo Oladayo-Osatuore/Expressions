@@ -20,6 +20,10 @@ body {
 	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+#navHeader {
+	font-family: 'Playball', cursive;
+}
+
 .expressions{
 	padding: 140px 0;
 	background: url(/modules/core/img/coreimg/expressions4.jpg) no-repeat;

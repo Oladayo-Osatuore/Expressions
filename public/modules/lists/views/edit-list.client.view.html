@@ -1,4 +1,4 @@
-<section data-ng-controller="ListsController" data-ng-init="findOne()">
+<section class="editList" data-ng-controller="ListsController" data-ng-init="findOne()">
     <div class="row">
          <div class="text-center col-md-offset-4 col-md-4">
             <div class="page-header">
@@ -9,7 +9,7 @@
                 <form class="form-horizontal" data-ng-submit="update()" novalidate>
                     <fieldset>
                         <div class="form-group">
-                            <label class="control-label" for="name">Caption</label>
+                            <label class="control-label" for="name"></label>
                             <div class="controls">
                                 <input type="text" data-ng-model="list.caption" id="name" class="form-control" placeholder="caption" required><br>
                                 <input type="text" data-ng-model="list.description" id="name" class="form-control" placeholder="Description" required>
@@ -39,4 +39,10 @@
             </div>
         </div>
     </div>
+    <div id="footer">
 </section>
+<div class="containerrfooter">
+    <p class="text-muted credit text-center">Expressions &copy 2014.All rights reserved.<a href="http://osatuore.omorodion@andela.co">   Omorodion Osatuore</a>.</p>
+</div>
+</div>
+

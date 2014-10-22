@@ -1,40 +1,59 @@
-<section data-ng-controller="ListsController">
-    <div class="page-header">
-        <h1>New List</h1>
-    </div>
-    <div class="col-md-12">
-        <form class="form-horizontal" data-ng-submit="create()" novalidate>
-            <fieldset>
-                <div class="form-group">
-                    <label class="control-label" for="name">Caption</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="caption" id="name" class="form-control" placeholder="caption" required><br>
-                        <input type="text" data-ng-model="description" id="name" class="form-control" placeholder="description" required>
-                    </div>
-                </div> 
-                        <p>
-                            <input type='button' ng-click='addText()' value='Add Text' class='btn btn-ok'/> <input type='button' ng-click='addPicture()' class='btn btn-info' value='Add Image'/> <input type='button' ng-click='addVideo()' value='Add Video' class='btn btn-warning'/>
-                        </p>
-                        <div data-ng-repeat="item in list.items">
-                            <div><p>{{item.itemType}}</p>
-                            <div><p><input type='text' data-ng-model='item.itemTitle' placeholder='Item Title'></p></div>
-                            <div><p><input type='text' data-ng-model='item.itemDescription' placeholder='Item Description'></p></div>
-                            <div><p><input type='picture' data-ng-model='item.itemImageUrl' placeholder='Image Link' data-ng-if="item.itemType ==='picture'"></p></div>
-                            <div><p><input type='video' data-ng-model='item.itemVideoUrl' data-ng-if="item.itemType==='video'"placeholder='Video Link'/></p></div><br>
-                             <input type='button' ng-click='removeItem($index)' value='Delete Item' class='btn btn-ok'/>
-                         </div>
-                        </div><br>
-                <div>  
-                    <div class="">
-                        <input type="submit" class="btn btn-default">
-                    </div>
-                    <div data-ng-show="error" class="text-danger">
-                        <strong data-ng-bind="error"></strong>
-                    </div>
+<section class="createList" data-ng-controller="ListsController">
+    <div class="row">
+        <div class="text-center col-md-offset-4 col-md-4">
+            <div  id="newListHeader" class="page-header">
+                    <h1>New List</h1>
             </div>
-            </fieldset>
-        </form>
+            <div class="col-md-12">
+                <form class="form-horizontal" data-ng-submit="create()" novalidate>
+                    <fieldset>
+                        <div class="allItems">
+                            <div class="form-group">
+                                <label class="control-label" for="name"></label>
+                                <div class="controls">
+                                    <input class="col-md-offset-2 col-md-8" type="text" data-ng-model="caption" id="name" class="form-control" placeholder="caption" required><br><br>
+                                    <textarea style="overflow:hidden" class="col-md-offset-2 col-md-8" type="text" data-ng-model="description" id="name" class="form-control" placeholder="description" required></textarea>
+                                </div>
+                                </div> 
+                                    <div class="addItems" data-ng-repeat="item in list.items">
+                                        <div id="itemType"><p>{{item.itemType | uppercase}}</p></div>
+                                        <div id="textDiv"><p>
+                                            <input class="col-md-offset-1 col-md-10" id="textField" type="text" data-ng-model='item.itemTitle' placeholder='Item Title'></p><br>
+                                        </div>
+                                        
+                                            <p><textarea id="itemDescription" type='text' data-ng-model='item.itemDescription' placeholder='Item Description'></p></textarea>
+                                        
+                                        <div><p>
+                                            <textarea type='picture' id="pictureLink" data-ng-model='item.itemImageUrl' placeholder='Image Link' data-ng-if="item.itemType ==='picture'"></textarea></p>
+                                        </div>
+                                        <div><p>
+                                            <input type='video' data-ng-model='item.itemVideoUrl' data-ng-if="item.itemType==='video'"placeholder='Video Link'/></p>
+                                        </div><br>
+                                         <div id="deletebutton">
+                                            <input type='button' ng-click='removeItem($index)' value='Delete Item' class='btn btn-ok'/>
+                                        </div>                                
+                                    </div><br>
+                                    <div id="buttons">
+                                        <input type='button' ng-click='addText()' value='Add Text' class='btn btn-ok'/> <input type='button' ng-click='addPicture()' class='btn btn-info' value='Add Image'/> <input type='button' ng-click='addVideo()' value='Add Video' class='btn btn-warning'/>
+                                    </div>
+                                <div><br>
+                                <div id="submitButton" class="">
+                                    <input type="submit" class="btn btn-default">
+                                </div>
+                                <div data-ng-show="error" class="text-danger">
+                                    <strong data-ng-bind="error"></strong>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </section>
-Status API Training Shop Blog About
-© 2014 GitHub, Inc. Terms Privacy Security Contact
+<div id="footer">
+    <div class="containerrfooter">
+     <p class="text-muted credit text-center">Expressions &copy 2014.All rights reserved.<a href="http://osatuore.omorodion@andela.co">   Omorodion Osatuore</a>.</p>
+    </div>
+    </div>

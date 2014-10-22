@@ -3,7 +3,17 @@ LIST LISTS STYLING
 ********************************/
 
 .listsImage {
-	background: url(../expressions4.jpg) no-repeat;
+	background: url(/modules/lists/img/expressions4.jpg) no-repeat;
+	height: 100%;
+}
+
+
+#submitButton {
+	padding: 0 0 0 0;
+}
+
+#deletebutton {
+	padding: 0 0 10px 0;
 }
 
 
@@ -18,24 +28,154 @@ LIST LISTS STYLING
 }
 
 .itemDiv {
-	padding: 125px 0 0 0;
+	padding: 103px 0 0 0;
+}
+.list-item {
+	margin:0 auto;
+	padding: 30px;
+	box-shadow: 0 0 12px 0 rgba(0,0,0,0.1);
+	margin-bottom: 10px;
+	width: 80%;
 }
 
-#itemTitle, #itemsDescription {
+#itemTitle {
 	font-size: 1.5em;
+	font-family: 'Lobster Two', cursive;
+	padding-bottom: 15px; 
+	color: #782a2a;
+}
+
+#itemsDescription {
+	font-size: 1.5em;
+	padding: 7px 0 0 0;
 }
  
 
  .sp{
  	margin-bottom: 50px;
-border-bottom: 1px solid black;
-padding-bottom: 11px;
+	border-bottom: 1px solid black;
+	padding-bottom: 11px;
  }
+
+ .viewLIst {
+ 	/*background: url(/modules/lists/img/expressions4.jpg) no-repeat;*/
+	/*height: 100%;*/
+ }
+
+
+.box {
+	border: 2px solid red;
+	/*height: auto;*/
+/*	margin-top: 84px;*/
+	margin: 0 auto;
+}
+
+.myCaption{
+	margin-top: 100px;
+}
+
+.captionName {
+	font-size: 2em;
+	padding: 91px 0 10px 0;
+	font-family: 'Abril Fatface', cursive;
+}
 
 
  /*********************************
-	EDIT LIST STYLING
+	CREATE AND EDIT LIST STYLING
  *********************************/
- .editList{
- 	padding: 63px 0 0 0;
+
+ #newListHeader {
+ 	padding: 20px 0 0 0;
  }
+
+.addItems {
+	background-color: #f0f0f0;
+	background-size: cover;
+	border-bottom: 1px solid black;
+}
+
+
+#itemType {
+	padding: 10px 0 0 0;
+}
+
+.itemName {
+	width: 70%;
+}
+
+#itemDescription {
+	width: 80%;
+	overflow: hidden;
+}
+
+
+#pictureLink {
+	width: 80%;
+}
+
+
+.createList {
+	background: url(/modules/lists/img/expressions10.jpg) no-repeat;
+	background-size: cover;
+	height: 600px;
+}
+
+.listwrap {
+	height: 30em;
+	overflow: auto;
+	margin-bottom: 10em;
+}
+
+
+.editList {
+	background: url(/modules/lists/img/expressions10.jpg) no-repeat;
+	background-size: cover;
+}
+
+.containerfooter {
+	padding: 241px 0 0 0;
+}
+
+.allItems {
+	background-color: white;
+	width: 500px;
+	overflow: auto;
+	height: 233px;
+	margin-left: -49px;
+}
+
+#textField {
+	margin-left: 48px;
+	width: 385px;
+	padding: 0 0 10px 0;
+}
+
+#textDiv {
+	padding:0 0 25px 0;
+}
+
+/***************************************
+	VIEW LIST PAGE STYLING
+***************************************/
+
+.updatbutton {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
