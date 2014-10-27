@@ -8,6 +8,13 @@ LIST LISTS STYLING
 }
 
 
+.listwrap {
+	height: 29em;
+	overflow: auto;
+	margin-bottom: 10em;
+}
+
+
 #submitButton {
 	padding: 0 0 0 0;
 }
@@ -22,8 +29,6 @@ LIST LISTS STYLING
 }
 
 #itemtype {
-	/*background-color: green;
-	border: 2px solid black ;*/
 	padding: 5px 0 0 0;
 }
 
@@ -85,6 +90,10 @@ LIST LISTS STYLING
 	CREATE AND EDIT LIST STYLING
  *********************************/
 
+.createListPage {
+	margin-top: 25px;
+}
+
  #newListHeader {
  	padding: 20px 0 0 0;
  }
@@ -121,17 +130,6 @@ LIST LISTS STYLING
 	height: 600px;
 }
 
-.listwrap {
-	height: 30em;
-	overflow: auto;
-	margin-bottom: 10em;
-}
-
-
-.editList {
-	background: url(/modules/lists/img/expressions10.jpg) no-repeat;
-	background-size: cover;
-}
 
 .containerfooter {
 	padding: 241px 0 0 0;
@@ -141,7 +139,7 @@ LIST LISTS STYLING
 	background-color: white;
 	width: 500px;
 	overflow: auto;
-	height: 233px;
+	height: 322px;
 	margin-left: -49px;
 }
 
@@ -162,6 +160,65 @@ LIST LISTS STYLING
 .updatbutton {
 
 }
+
+
+
+/***************************************
+	EDIT LIST PAGE STYLING
+***************************************/
+
+#editList{
+	margin:10px 10px 0 -184px;
+	padding: 48px;
+	box-shadow: 0 0 12px 0 rgba(0,0,0,0.1);
+	margin-bottom: -59px 0 10px 0;
+	width: 180%;
+	margin: 11px 0 0 -271px;
+	}
+
+	#editListHeading {
+		margin-right: 90px;
+		padding: 61px 0 20px 0;
+	}
+
+	#editTitle, #editDescription, #editPicture, #editVideo {
+		width: 492px;
+		padding: 0 0 10px 13px;
+	}
+
+	.editCaption {
+		width: 492px;
+		padding: 35px 0 0px 0;
+	} 
+
+
+	.editButtons {
+		margin-left: -92px;
+	}
+	
+
+	.editSubmit {
+		margin-left: -110px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
