@@ -38,7 +38,28 @@
 	<!--Application CSS Files-->
 	{% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">
 	{% endfor %}
+	<script type="text/javascript">
+		window.fbAsyncInit = function() {
+			window.FB = FB;
+			window.FB.init({
+				appId      : '1503355249923931',
+				xfbml      : true,
+				version    : 'v2.2',
+				status: true,
+				frictionless:true,
+				cookie: true
+			});
+		};
 
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.async = true;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
 	<!-- HTML5 Shim -->
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

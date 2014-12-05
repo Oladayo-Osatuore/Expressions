@@ -9,6 +9,61 @@ var mongoose = require('mongoose'),
 /**
  * List Schema
  */
+var LikeSchema = new Schema({
+    user: {
+        type: Schema.ObjectId,
+        ref: 'User'
+    },
+    created: {
+        type: Date,
+        default: Date.now
+    }
+    //,
+    // nameOfLiker: {
+    //     type: String,
+    //     default: '',
+    //     trim: true
+    // },
+    // gravatarUrlLike: {
+    //     type: String,
+    //     default: '',
+    //     trim: true
+    // }
+});
+
+
+/**
+ * Comment Schema
+ */
+var CommentSchema = new Schema({
+    comment: {
+        type: String,
+        default: '',
+        trim: true
+    },
+    creator: {
+        type: Schema.ObjectId,
+        ref: 'User'
+    },
+    nameOfCreator: {
+        type: String,
+        default: '',
+        trim: true
+    },
+    created: {
+        type: Date,
+        default: Date.now
+    },
+    gravatarUrlComm: {
+        type: String,
+        default: '',
+        trim: true
+    },
+});
+
+
+
+
 
 
 var ItemSchema = new Schema({
@@ -38,7 +93,7 @@ var ItemSchema = new Schema({
 	},
 	itemDescription:{
 		type: String,
-		required: 'Description can not be blank',
+		required: 'Item Description can not be blank',
 		trim: true
 
 	},
@@ -53,6 +108,9 @@ var ItemSchema = new Schema({
 		type: Schema.ObjectId,
 		ref: 'User'
 	},
+
+	likes: [LikeSchema],
+	comments: [CommentSchema]
 
 });
 
@@ -75,7 +133,7 @@ var ListSchema = new Schema({
 
 	description:{
 		type: String,
-		required: 'Description can not be blank',
+		required: 'List Description can not be blank',
 		trim: true
 
 	},
@@ -90,3 +148,8 @@ var ListSchema = new Schema({
 
 mongoose.model('List', ListSchema);
 mongoose.model('Item', ItemSchema);
+mongoose.model('Comment', CommentSchema);
+mongoose.model('Like', LikeSchema);
+
+
+

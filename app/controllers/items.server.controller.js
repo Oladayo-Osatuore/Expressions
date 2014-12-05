@@ -14,9 +14,10 @@ var lists = require('../../app/controllers/lists');
 exports.createItem = function(req, res) {
 	var item = new Item(req.body);
 	var list = req.list;
-	console.log(req.user);
+	// console.log(req.user);
 	item.itemMaker = req.user;
 	list.item.unshift(item);
+	console.log(item)
 
 
 	list.save(function(err) {
@@ -36,7 +37,7 @@ exports.createItem = function(req, res) {
  * Show the current List
  */
 exports.readItem = function(req, res) {
-	res.jsonp(req.lists.item);
+	res.jsonp(req.item);
 };
 
 /**
@@ -97,7 +98,7 @@ exports.readItem = function(req, res) {
  */
 exports.itemByID = function(req, res, next, id) { 
 	var list = req.list;
-	req.item = list.item.id(id);
+	req.item = list.items.id(id);
 	next();
 };
 
