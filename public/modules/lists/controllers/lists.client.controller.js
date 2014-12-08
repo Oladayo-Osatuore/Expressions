@@ -257,13 +257,15 @@ angular.module('lists').controller('ListsController', ['$scope', '$sce', '$state
 	        itemId: this.item._id,
 	        _id:$scope.list._id
 	    });
-	        console.log($scope.list._id);
+	        // console.log($scope.list._id);
             //save like
             likeitem.$save(function(response) {
+            	console.log(response)
                 $scope.item = response;
                 $scope.liked = true;
             }, function(errorResponse) {
                 $scope.likeError = errorResponse.data.message;
+                alert(errorResponse.data.message);
             });
             // $state.reload();
         };
