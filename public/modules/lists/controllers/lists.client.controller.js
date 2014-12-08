@@ -309,22 +309,28 @@ angular.module('lists').controller('ListsController', ['$scope', '$sce', '$state
 					shareURL="//plus.google.com/share?url="+url
 					break;
 			}
-			shareURL&&window.open(shareURL,"expression_window","height=250,width=600,toolbar=0,location=0")
+			 if (shareURL)
+			shareURL&&window.open(shareURL,'expressions_window',"height=250,width=600,toolbar=0,location=0")
 		}
-		var shortenString = function(str){
-			return "string" == typeof str?str = str.length >= 200?str.substring(0,197) + "...":str:str
-		};
-
-		var fBShare = function() {
-			
-			window.FB.ui({
-				method:"feed",
-				link:$scope.url,
-				// picture:$scope.patient.image,
-				caption:$scope.list.caption
-				// message:shortenString($scope.patient.description)
-			}
-		)};
+		var shortenString = function(str) {
+            if (typeof str === typeof '') {
+                str = str.length >= 200 ? str.substring(0, 197) + '...' : str;
+                return str;
+            }
+            return str;
+        };
+        var fBShare = function() {
+            //var FB = FB?FB:null;
+            if(!window.FB)
+                return;
+            window.FB.ui({
+                method: 'feed',
+                link: $scope.url,
+                itemImageUrl: $scope.itemImageUrl,
+                caption: shortenString($scope.list.caption),
+                itemDescription: shortenString($scope.itemDescription)
+            });
+        };
 	}	
 ]);
 
