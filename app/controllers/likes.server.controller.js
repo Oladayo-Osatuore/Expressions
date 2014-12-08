@@ -12,6 +12,14 @@ var lists = require('../../app/controllers/lists');
 // var comments = require('../../app/controllers/comments');
 
 
+
+exports.hasAuthorization = function(req, res, next) {
+  if (req.list.user.id !== req.user.id) {
+    return res.status(403).send('User is not authorized');
+  }
+  next();
+};
+
 exports.likeItem = function(req, res) {
     var item = req.item,
         list = req.list,
@@ -47,7 +55,7 @@ exports.likeItem = function(req, res) {
                             message: ''
                         });
                     else
-                        return res.jsonp(item);
+                        return res.jsonp(like);
                     console.log(item);
                 });
             }

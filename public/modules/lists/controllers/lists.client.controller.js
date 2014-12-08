@@ -1,10 +1,11 @@
 'use strict';
 
 // Lists controller
-angular.module('lists').controller('ListsController', ['$scope', '$sce', '$stateParams', '$location', 'Authentication', 'Lists','Items','$upload','$timeout',
-	function($scope, $sce, $stateParams, $location, Authentication, Lists, Items, $upload, $timeout) {
+angular.module('lists').controller('ListsController', ['$scope', '$sce', '$stateParams', '$location', 'Authentication', 'Lists','Items','LikesItem','$upload','$timeout',
+	function($scope, $sce, $stateParams, $location, Authentication, Lists, Items, LikesItem, $upload, $timeout) {
 		$scope.authentication = Authentication;
 		$scope.liked = false;
+		$scope.likesItem = [];
 		// $scope.items = [];
 		// $scope.item = {};
 		// $scope.lists = {};
@@ -223,6 +224,21 @@ angular.module('lists').controller('ListsController', ['$scope', '$sce', '$state
 		// };
 
 
+		// $scope.likesItem = function() {
+  //           var likeitem = new LikesItem({
+  //               itemId: this.item._id,
+  //               choose: 'like'
+  //           });
+  //           //save like
+  //           likeitem.$save(function(response) {
+  //               $scope.item = response;
+  //               $scope.liked = true;
+  //           }, function(errorResponse) {
+  //               $scope.likeError = errorResponse.data.message;
+  //           });
+  //       };
+
+
 
 		// Update existing List
 		$scope.update = function() {
@@ -236,20 +252,21 @@ angular.module('lists').controller('ListsController', ['$scope', '$sce', '$state
 
 
 		//likeItem
-		// $scope.likeItem = function () {
-	 //        var likeitem = new Likes({
-	 //        itemId: this.item._id,
-	 //        choose: 'like'
-	 //    });
-  //           //save like
-  //           likeitem.$save(function(response) {
-  //               $scope.item = response;
-  //               $scope.liked = true;
-  //           }, function(errorResponse) {
-  //               $scope.likeError = errorResponse.data.message;
-  //           });
-  //           // $state.reload();
-  //       };
+		$scope.likesItem = function () {
+	        var likeitem = new LikesItem({
+	        itemId: this.item._id,
+	        _id:$scope.list._id
+	    });
+	        console.log($scope.list._id);
+            //save like
+            likeitem.$save(function(response) {
+                $scope.item = response;
+                $scope.liked = true;
+            }, function(errorResponse) {
+                $scope.likeError = errorResponse.data.message;
+            });
+            // $state.reload();
+        };
 
 		
 

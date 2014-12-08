@@ -1,15 +1,15 @@
 'use strict';
 
 //LikesPoem service used to communicate Poems REST endpoints
-angular.module('items').factory('LikesItem', ['$resource',
+angular.module('lists').factory('LikesItem', ['$resource',
 	function($resource) {
-		return $resource('lists/:listId/items/:itemId/:choose', {}, {
-			save: {
-				method: 'POST', params: {choose: 'like', itemId: '@itemId'}
-			},
-			unsave: {
-				method: 'DELETE', params: {choose: 'unlike', itemId: '@itemId'}
-			}
+		return $resource('lists/:listId/items/:itemId/like', { itemId: '@itemId', listId: '@_id'}, {
+			// save: {
+			// 	method: 'POST', params: {listId: '@listId', itemId: '@_id'}
+			// }
+			// // unsave: {
+			// 	method: 'DELETE', params: {choose: 'unlike', itemId: '@itemId', listId: '@_id'}
+			// }
 		});
 	}
 ]);

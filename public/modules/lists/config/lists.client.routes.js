@@ -24,6 +24,10 @@ angular.module('lists').config(['$stateProvider',
 		state('createItem', {
 			url: 'lists/:listId/addItem',
 			templateUrl: 'modules/lists/views/create-item.client.view.html'
+		}).
+		state('likesItem', {
+			url: 'lists/:listId/items/:itemId/like',
+			templateUrl: 'modules/lists/views/view-list.client.view.html'
 		});
 	}
 ]);
