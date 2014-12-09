@@ -29,6 +29,9 @@
                         <i class="glyphicon glyphicon-trash"></i>
                     </a>
                     <img data-ng-click="likesItem()" src="modules/lists/img/likeicon.jpeg" width="60" height="30">
+                    <!-- <div ng-repeat='like in list.items.likes'> -->
+                    <div><h4 data-ng-bind="list.items.like"></h4></div>
+                    <div  class=""><img data-ng-src="{{like}}"/></div>
                 </div>
             </div>
 

@@ -6,6 +6,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$sce', '$state
 		$scope.authentication = Authentication;
 		$scope.liked = false;
 		$scope.likesItem = [];
+		var numOfLike = [];
 		// $scope.items = [];
 		// $scope.item = {};
 		// $scope.lists = {};
@@ -257,10 +258,13 @@ angular.module('lists').controller('ListsController', ['$scope', '$sce', '$state
 	        itemId: this.item._id,
 	        _id:$scope.list._id
 	    });
-	        // console.log($scope.list._id);
+	        
             //save like
             likeitem.$save(function(response) {
-            	console.log(response)
+            	// var numOfLike = response;
+            	numOfLike.push(response);
+            	alert(numOfLike.length);
+            	// console.log(response)
                 $scope.item = response;
                 $scope.liked = true;
             }, function(errorResponse) {
@@ -306,7 +310,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$sce', '$state
 					shareURL="//twitter.com/intent/tweet?original_referer="+url+"&text="+$scope.itemDescription+"&tw_p=tweetbutton&url="+url;
 					break;
 				case 3:
-					shareURL="//plus.google.com/share?url="+url
+					shareURL="//plus.google.com/share?url="+url;
 					break;
 			}
 			 if (shareURL)
@@ -320,15 +324,15 @@ angular.module('lists').controller('ListsController', ['$scope', '$sce', '$state
             return str;
         };
         var fBShare = function() {
-            //var FB = FB?FB:null;
+         //var FB = FB?FB:null;
             if(!window.FB)
                 return;
             window.FB.ui({
                 method: 'feed',
                 link: $scope.url,
-                itemImageUrl: $scope.itemImageUrl,
-                caption: shortenString($scope.list.caption),
-                itemDescription: shortenString($scope.itemDescription)
+                picture: $scope.itemImageUrl,
+                description: shortenString($scope.itemDescription),
+                title: shortenString($scope.itemTitle)
             });
         };
 	}	
