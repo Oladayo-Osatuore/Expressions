@@ -14,6 +14,8 @@ angular.module('lists').factory('LikesItem', ['$resource',
 	}
 ]);
 
+
+
 //LikesComment service used to communicate Poems REST endpoints
 // angular.module('poems').factory('LikesComment', ['$resource',
 // 	function($resource) {

@@ -6,7 +6,10 @@ angular.module('lists').controller('ListsController', ['$scope', '$sce', '$state
 		$scope.authentication = Authentication;
 		$scope.liked = false;
 		$scope.likesItem = [];
-		var numOfLike = [];
+
+		// var numOfLike = [];
+		// var likelength = [];
+
 		// $scope.items = [];
 		// $scope.item = {};
 		// $scope.lists = {};
@@ -260,10 +263,14 @@ angular.module('lists').controller('ListsController', ['$scope', '$sce', '$state
 	    });
 	        
             //save like
+
+            
             likeitem.$save(function(response) {
             	// var numOfLike = response;
-            	numOfLike.push(response);
-            	alert(numOfLike.length);
+            	// numOfLike.push(response);
+            	// likelength = numOfLike.length;
+
+            	
             	// console.log(response)
                 $scope.item = response;
                 $scope.liked = true;
