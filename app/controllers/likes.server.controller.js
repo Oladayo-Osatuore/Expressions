@@ -20,6 +20,14 @@ exports.hasAuthorization = function(req, res, next) {
   next();
 };
 
+exports.getLikeCount = function(req, res){
+    var item = req.item;
+    var likeCount = item.likes.length;
+    return res.jsonp({count:likeCount}); 
+
+
+};
+
 exports.likeItem = function(req, res) {
     var item = req.item,
         list = req.list,

@@ -1,11 +1,16 @@
 'use strict';
 
 // Lists controller
-angular.module('lists').controller('ListsController', ['$scope', '$sce', '$stateParams', '$location', 'Authentication', 'Lists','Items','LikesItem','$upload','$timeout',
-	function($scope, $sce, $stateParams, $location, Authentication, Lists, Items, LikesItem, $upload, $timeout) {
+angular.module('lists').controller('ListsController', ['$scope', '$http','$sce', '$stateParams', '$location', 'Authentication', 'Lists','Items','Likes','$upload','$timeout',
+	function($scope, $http, $sce, $stateParams, $location, Authentication, Lists, Items, Likes, $upload, $timeout) {
 		$scope.authentication = Authentication;
+		$scope.fileUploaded = true;
+    $scope.fileLoading = false;
 		$scope.liked = false;
 		$scope.likesItem = [];
+		$scope.likeCount = 0;
+		var list = [];	
+		$scope.url = 'http://heartexpressions.herokuapp.com/#!/' + $location.path();
 
 		// var numOfLike = [];
 		// var likelength = [];
@@ -257,15 +262,15 @@ angular.module('lists').controller('ListsController', ['$scope', '$sce', '$state
 
 		//likeItem
 		$scope.likesItem = function () {
-	        var likeitem = new LikesItem({
-	        itemId: this.item._id,
-	        _id:$scope.list._id
-	    });
+	        var likeitem = new Likes({
+			        itemId: this.item._id,
+			        _id:$scope.list._id
+			    });
 	        
             //save like
-
+            var itemId = this.item._id;
             
-            likeitem.$save(function(response) {
+           likeitem.$save(function(response) {
             	// var numOfLike = response;
             	// numOfLike.push(response);
             	// likelength = numOfLike.length;
@@ -274,10 +279,30 @@ angular.module('lists').controller('ListsController', ['$scope', '$sce', '$state
             	// console.log(response)
                 $scope.item = response;
                 $scope.liked = true;
-            }, function(errorResponse) {
+                // $scope.likeitem = $scope.getLikeCount(function(response){
+                // $scope.likesItem = jsonp($scope.count);
+                // });
+           		
+           //Ajax request
+           			$http.get('/lists/'+$scope.list._id+'/items/'+itemId+'/getLikeCount').success(function(res){
+           				console.log(res);
+           				$scope.likeCount = res.count;
+
+           			});
+
+            }, 
+            function(errorResponse) {
                 $scope.likeError = errorResponse.data.message;
                 alert(errorResponse.data.message);
             });
+
+
+           // $scope.list.$save(function(response){
+
+           // }, function(errorResponse){
+           // 	$scope.likeError = errorResponse.data.message;
+           // })
+ 
             // $state.reload();
         };
 

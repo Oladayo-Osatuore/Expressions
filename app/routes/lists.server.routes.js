@@ -40,6 +40,10 @@ module.exports = function(app) {
     app.route('/lists/:listId/items/:itemId/like')
         .post(users.requiresLogin, likes.likeItem);
 
+    app.route('/lists/:listId/items/:itemId/getLikeCount')
+        .get(users.requiresLogin, likes.getLikeCount);    
+
+
 
     // app.route('/lists/:listId/items/:itemId/unlike')
     // 	.post(users.requiresLogin, likes.unlikeItem);

@@ -201,6 +201,20 @@ LIST LISTS STYLING
 		margin-left: -110px;
 	}
 
+	#loader {
+	padding: 0 0 0 125px;
+	margin: 0 auto;
+}
+
+
+
+.hidden {
+	display: none;
+}
+
+
+
+
 
 
 

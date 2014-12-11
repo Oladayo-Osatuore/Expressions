@@ -28,6 +28,10 @@ angular.module('lists').config(['$stateProvider',
 		state('likesItem', {
 			url: 'lists/:listId/items/:itemId/like',
 			templateUrl: 'modules/lists/views/view-list.client.view.html'
+		}).
+		state('getLikeCount', {
+			url: 'lists/:listId/items/:itemId/getLikeCount',
+			templateUrl: 'modules/lists/views/view-list.client.view.html'
 		});
 	}
 ]);
