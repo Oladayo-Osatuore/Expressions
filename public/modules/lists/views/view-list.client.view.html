@@ -18,19 +18,23 @@
                     </em>
                 </small>
                 <br/>
-                <div  class="text-center" data-ng-show="authentication.user._id == list.user._id">
+                <div>
                     <a data-ng-click="shareItem(1)" class><img src="modules/lists/img/facebookicon.png" width="30" height="30" title="Share on Facebook"></a>
                     <a data-ng-click="shareItem(3)" class><img src="modules/lists/img/googleplus.png" width="30" height="30" title="Share on google"></a>
                     <a data-ng-click="shareItem(2)" class><img src="modules/lists/img/twittericon.png" width="30" height="30" title="Share on Facebook"></a> 
+                    <img data-ng-click="likesItem()" src="modules/lists/img/likeicon.jpeg" width="60" height="30">
+                    <!-- <div ng-repeat='like in list.items.likes'> -->
+                    <div><h4></h4></div>{{item.likes.length}}
+                </div>
+                <div  class="text-center" data-ng-show="authentication.user._id == list.user._id">
+                    
                     <a class="btn btn-primary" href="/#!/lists/{{list._id}}/edit">
                         <i class="glyphicon glyphicon-edit"></i>
                     </a>
                     <a class="btn btn-primary" data-ng-click="remove();">
                         <i class="glyphicon glyphicon-trash"></i>
                     </a>
-                    <img data-ng-click="likesItem()" src="modules/lists/img/likeicon.jpeg" width="60" height="30">
-                    <!-- <div ng-repeat='like in list.items.likes'> -->
-                    <div><h4>{{likeCount}}</h4></div>
+                    
 
                 </div>
             </div>

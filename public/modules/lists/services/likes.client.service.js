@@ -16,7 +16,16 @@ angular.module('lists').factory('Likes', ['$resource',
 ]);
 
 
-
+angular.module('lists').factory('Items', ['$resource',
+	function($resource) {
+		return $resource('/lists/:listId/items/:itemId'/'getLikeCount', { listId:'@list', itemId: '@_id'
+		}, {
+			update: {
+				method: 'GET'
+			}
+		});
+	}
+]);
 
 
 

@@ -22,3 +22,5 @@ angular.module('lists').factory('Items', ['$resource',
 		});
 	}
 ]);
+
+

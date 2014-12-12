@@ -24,8 +24,6 @@ exports.getLikeCount = function(req, res){
     var item = req.item;
     var likeCount = item.likes.length;
     return res.jsonp({count:likeCount}); 
-
-
 };
 
 exports.likeItem = function(req, res) {
@@ -63,7 +61,7 @@ exports.likeItem = function(req, res) {
                             message: ''
                         });
                     else
-                        return res.jsonp(like);
+                        return res.jsonp(list);
                     console.log(item);
                 });
             }
