@@ -69,7 +69,7 @@ var CommentSchema = new Schema({
 var ItemSchema = new Schema({
 	itemType: {
 		type: String,
-		enum : ['text', 'video', 'picture'],
+		enum : ['text', 'video', 'picture', 'pdf'],
 		required: 'category can only be text, picture or video and not blank',
 		trim : true
 	},
@@ -86,6 +86,13 @@ var ItemSchema = new Schema({
 
 	},
 	itemVideoUrl:{
+		type: String,
+		trim: true,
+		default: ''
+
+	},
+
+itemPdf:{
 		type: String,
 		trim: true,
 		default: ''

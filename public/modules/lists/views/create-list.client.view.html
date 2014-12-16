@@ -27,6 +27,9 @@
                                  <div class="controls" data-ng-if="item.itemType === 'picture'">
                                        <input type="file" ng-file-select="onFileSelect($files,$index)" name="fileselect" required accept="image/*">
                                 </div>
+                                <div class="controls" data-ng-if="item.itemType === 'pdf'">
+                                       <input type="file" ng-file-select="onFileSelect($files,$index)" name="fileselect" required accept="application/pdf">
+                                </div>
                                     
                                     <!-- <div>
                                         <p>
@@ -59,7 +62,7 @@
                                 </div>
                                 <br>
                                 <div id="buttons">
-                                    <input type='button' ng-click='addText()' value='Add Text' class='btn btn-ok'/> <input type='button' ng-click='addPicture()' class='btn btn-info' value='Add Image'/> <input type='button' ng-click='addVideo()' value='Add Video' class='btn btn-warning'/>
+                                    <input type='button' ng-click='addText()' value='Add Text' class='btn btn-ok'/> <input type='button' ng-click='addPicture()' class='btn btn-info' value='Add Image'/> <input type='button' ng-click='addVideo()' value='Add Video' class='btn btn-warning'/><input type='button' ng-click='addPdf()' value='Add PDF' class='btn btn-danger'/>
                                 </div>
                                 <div>
                                 <br>

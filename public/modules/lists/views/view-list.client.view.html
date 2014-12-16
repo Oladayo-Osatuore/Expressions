@@ -7,6 +7,7 @@
             <div class="list-item" ng-repeat='item in list.items'>
                  <div  id="itemTitle" class="text-center col-md-offset-2 col-md-8"><h4 data-ng-bind="item.itemTitle"></h4></div><br><br>  
                 <div  class="text-center"><img data-ng-src="{{item.itemImageUrl}}" ng-if="item.itemType === 'picture'"height='350' width='600'/></div>
+                <div  class="text-center"><iframe ng-src="{{item.itemPdf}}" ng-if="item.itemType === 'pdf'"height='350' width='600'/></iframe></div>
                 <div  class="text-center"><iframe ng-if="item.itemType==='video'" data-ng-src="{{scePermit(item.itemVideoUrl)}}" height='350' width='600'></iframe></div>
                 <div id="itemsDescription" class="text-center"><h4 data-ng-bind="item.itemDescription"></h4></div>
                 <small  class="text-center col-md-offset-2 col-md-8">

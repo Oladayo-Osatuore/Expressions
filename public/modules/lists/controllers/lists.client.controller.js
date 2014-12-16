@@ -10,7 +10,7 @@ angular.module('lists').controller('ListsController', ['$scope', '$http', '$sce'
         $scope.likesItem = [];
         $scope.likeCount = 0;
         var list = [];
-        $scope.url = window.location.href;
+        $scope.url = 'http://heartexpressions.herokuapp.com/';
 
         // var numOfLike = [];
         // var likelength = [];
@@ -58,6 +58,15 @@ angular.module('lists').controller('ListsController', ['$scope', '$http', '$sce'
                 itemDescription: ''
             });
         };
+
+        $scope.addPdf = function() {
+            $scope.list.items.push({
+                itemType: 'pdf',
+                itemTitle: '',
+                itemVideoUrl: '',
+                itemDescription: ''
+            });
+        }
 
         $scope.onFileSelect = function($files, $index) {
             $scope.files = $files;
@@ -113,9 +122,12 @@ angular.module('lists').controller('ListsController', ['$scope', '$http', '$sce'
                         if ($scope.list.items[$scope.selectedItem].itemType === 'picture') {
                             $scope.list.items[$scope.selectedItem].itemImageUrl = $scope.uploadResult;
                             console.log('upload done img', $scope.uploadResult);
-                        } else {
+                        } else if ($scope.list.items[$scope.selectedItem].itemType === 'video') {
                             $scope.list.items[$scope.selectedItem].itemVideoUrl = $scope.uploadResult;
                             console.log('upload done vid', $scope.uploadResult);
+                        } else {
+                            $scope.list.items[$scope.selectedItem].itemPdf = $scope.uploadResult;
+                            console.log('upload done pdf', $scope.uploadResult);
                         }
 
                         $scope.fileLoading = false;

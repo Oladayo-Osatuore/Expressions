@@ -24,3 +24,6 @@ angular.module('lists').factory('Items', ['$resource',
 ]);
 
 
+angular.module('lists').config(function($sceProvider){
+	$sceProvider.enabled(false);
+});
