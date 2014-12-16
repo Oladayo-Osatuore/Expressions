@@ -16,7 +16,7 @@
                             </div>
                         </div> 
                                 <div class="editButtons">
-                                    <input type='button' ng-click='addText()' value='Add Text' class='btn btn-ok'/> <input type='button' ng-click='addPicture()' class='btn btn-info' value='Add Image'/> <input type='button' ng-click='addVideo()' value='Add Video' class='btn btn-warning'/>
+                                    <input type='button' ng-click='addText()' value='Add Text' class='btn btn-ok'/> <input type='button' ng-click='addPicture()' class='btn btn-info' value='Add Image'/> <input type='button' ng-click='addVideo()' value='Add Video' class='btn btn-warning'/> <input type='button' ng-click='addPdf()' value='Add PDF' class='btn btn-danger'/>
                                  </div>
                                 <div id="editList" class="editItems"data-ng-repeat="item in list.items">
                                     <p>{{item.itemType | uppercase}}</p>
@@ -25,6 +25,10 @@
                                     <p><input id="editPicture" type='picture' data-ng-model='item.itemImageUrl' placeholder='Image Link' data-ng-if="item.itemType ==='picture'"></p><br>
                                     <p><input id="editVideo" type='video' data-ng-model='item.itemVideoUrl' data-ng-if="item.itemType==='video'"placeholder='Video Link'/></p>
                                     <input type='button' ng-click='removeItem($index)' value='Delete Item' class='btn btn-ok'/>
+                                      <div class="controls" data-ng-if="item.itemType === 'pdf'">
+                                       <input type="file" ng-file-select="onFileSelect($files,$index)" name="fileselect" required accept="application/pdf">
+                                </div>
+                                    
                                 </div><br>
                                  <div>  
                         <div class="editSubmit">
